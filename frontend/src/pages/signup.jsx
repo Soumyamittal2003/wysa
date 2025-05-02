@@ -37,7 +37,7 @@ const NicknameScreen = () => {
 
     try {
       // Send nickname and password to the backend for signup
-      const response = await axios.post('http://localhost:5000/users/signup', { nickname, password },{ withCredentials: true } );
+      const response = await axios.post('https://wysa-hi43.onrender.com/users/signup', { nickname, password },{ withCredentials: true } );
       setMessage(response.data.message);
       
       // After successful signup, store the nickname in localStorage

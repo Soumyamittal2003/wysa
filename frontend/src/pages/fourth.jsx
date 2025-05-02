@@ -23,7 +23,7 @@ const BedtimeScreen = () => {
 
     try {
       // Send selected time to the backend via API
-      await axios.post('http://localhost:5000/users/save', {
+      await axios.post('https://wysa-hi43.onrender.com/users/save', {
         nickname: localStorage.getItem('nickname'),  // Retrieve the nickname from localStorage
         answers: {
           bedtime: selectedTime,  // Send the selected bedtime to backend

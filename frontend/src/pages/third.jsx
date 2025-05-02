@@ -24,7 +24,7 @@ const SleepDurationScreen = () => {
 
     try {
       // Send selected option to the backend via API (use your API endpoint)
-      await axios.post('http://localhost:5000/users/save', {
+      await axios.post('https://wysa-hi43.onrender.com/users/save', {
         nickname: localStorage.getItem('nickname'),  // Get the nickname from localStorage
         answers: {
           sleepDuration: selected,  // Send selected duration to backend

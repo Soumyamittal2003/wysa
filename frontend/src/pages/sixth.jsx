@@ -23,7 +23,7 @@ const SleepHoursScreen = () => {
 
     try {
       // Send the selected sleep hours to the backend
-      await axios.post('http://localhost:5000/users/save', {
+      await axios.post('https://wysa-hi43.onrender.com/users/save', {
         nickname: localStorage.getItem('nickname'),  // Get nickname from localStorage
         answers: {
           sleepHours: selected,  // Send the selected sleep hours to the backend

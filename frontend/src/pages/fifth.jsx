@@ -1,25 +1,24 @@
 import React, { useState, useRef } from 'react';
 import { FaChevronRight, FaArrowDown } from 'react-icons/fa';
-import axios from 'axios';  // Import axios for API requests
-import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+import axios from 'axios';  
+import { useNavigate } from 'react-router-dom';  
 
 const WakeUpTimeScreen = () => {
-  const [wakeTime, setWakeTime] = useState('06:00');  // Initial time
+  const [wakeTime, setWakeTime] = useState('06:00');  
   const inputRef = useRef(null);
-  const navigate = useNavigate();  // Navigate to the next screen
+  const navigate = useNavigate();  
 
-  // Handle wake-up time change
+  
   const handleTimeChange = (e) => {
-    setWakeTime(e.target.value);  // Update the selected time
+    setWakeTime(e.target.value);  
   };
 
-  // Trigger time picker for the input field
+  
   const handleTimeClick = () => {
-    inputRef.current.showPicker?.();  // For modern browsers (Chrome, Edge)
-    inputRef.current.click();         // For older browsers (fallback)
+    inputRef.current.showPicker?.();  
+    inputRef.current.click();         
   };
 
-  // Handle Next button click (save wake-up time and navigate)
   const handleNextClick = async () => {
     if (!wakeTime) {
       alert('Please select a wake-up time before proceeding!');
@@ -28,7 +27,7 @@ const WakeUpTimeScreen = () => {
 
     try {
       // Send selected wake-up time to the backend (API call)
-      await axios.post('http://localhost:5000/users/save', {
+      await axios.post('https://wysa-hi43.onrender.com/users/save', {
         nickname: localStorage.getItem('nickname'),  // Retrieve nickname from localStorage
         answers: {
           wakeUpTime: wakeTime,  // Save the wake-up time to the backend
